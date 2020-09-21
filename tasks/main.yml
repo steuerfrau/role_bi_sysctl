@@ -21,7 +21,7 @@
 - name: Display all variables/facts known for a host
   debug:
     var: hostvars[inventory_hostname]
-  tags: debug_info
+  tags: [ never, debug ]
 
 - name: Install role_bi_sysctl
   include: 01-packages.yml
