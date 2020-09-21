@@ -13,7 +13,6 @@
   include_vars: "{{ item }}"
   with_first_found:
     - "baseinstall_type_{{ baseinstall_type }}.yml"
-    - "baseinstall_type_default.yml"
 
 - name: Include os independent variables.
   include_vars: "vars/main.yml"
