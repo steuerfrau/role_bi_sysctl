@@ -5,9 +5,8 @@
      owner: root
      group: root
      mode: '0644'
+  register: role_bi_sysctl_80_ansible_baseinstall
 
-#     - name: read all changes in sysctl
-#       shell: sysctl -p
-#       when: copy_swap.changed
-#       tags: never, install, config
-
+- name: Read all sysctl configurations.
+  shell: sysctl -p /etc/sysctl.d/80_ansible_baseinstall.conf
+  when: role_bi_sysctl_80_ansible_baseinstall.changed

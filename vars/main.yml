@@ -1,5 +1,6 @@
 ---
 # vars file for role_bi_sysctl
-role_bi_sysctl_osi:
-  sysctl_vm:
-    vm.swappiness: 1
+#   sysctl_baseinstalltype_virtualmachine:
+#     vm.swappiness: 1
+#   sysctl_baseinstalltype_kvm_hypervisor:
+#     vm.swappiness: 30
