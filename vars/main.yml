@@ -1,2 +1,5 @@
 ---
 # vars file for role_bi_sysctl
+role_bi_sysctl_osi:
+  sysctl_vm:
+    vm.swappiness: 1

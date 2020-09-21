@@ -1,0 +1,13 @@
+- name: "Create sysctl file"
+  template:
+     src: templates/80_ansible_baseinstall.j2
+     dest: /etc/sysctl.d/80_ansible_baseinstall.conf
+     owner: root
+     group: root
+     mode: '0644'
+
+#     - name: read all changes in sysctl
+#       shell: sysctl -p
+#       when: copy_swap.changed
+#       tags: never, install, config
+

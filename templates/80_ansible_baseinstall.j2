@@ -1,0 +1,5 @@
+{% if hostvars[inventory_hostname]['baseinstall_type'] == 'virtualmachine' %}
+{% for key, value in hostvars[inventory_hostname]['role_bi_sysctl_osi']['sysctl_vm'].items() %}
+{{ key }} = {{ value }}
+{% endfor %}
+{% endif %}
