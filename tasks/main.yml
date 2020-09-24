@@ -1,14 +1,5 @@
 ---
 # tasks file for role_bi_sysctl
-- name: Gather OS specific variables
-  include_vars: "{{ item }}"
-  with_first_found:
-    - "{{ ansible_distribution }}-{{ ansible_distribution_version}}.yml" # For OpenSuSE Leap ansible_distribution_major_version is NA
-    - "{{ ansible_distribution }}-{{ ansible_distribution_major_version}}.yml"
-    - "{{ ansible_distribution }}.yml"
-  tags:
-    - always
-
 - name: Gather machine type specific variables
   include_vars: "{{ item }}"
   with_first_found:
@@ -21,9 +12,6 @@
   debug:
     var: hostvars[inventory_hostname]
   tags: [ never, debug ]
-
-- name: Install role_bi_sysctl
-  include: 01-packages.yml
 
 - name: Configure role_bi_sysctl
   include: 02-configure.yml

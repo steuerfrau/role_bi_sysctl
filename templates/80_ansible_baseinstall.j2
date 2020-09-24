@@ -1,3 +1,3 @@
-{% for key, value in hostvars[inventory_hostname]['role_bi_sysctl_osi']['sysctl_values'].items() %}
+{% for key, value in role_bi_sysctl_sysctl_values.items() %}
 {{ key }} = {{ value }}
 {% endfor %}
